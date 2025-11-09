@@ -95,3 +95,35 @@ body{
       .card{padding:26px 18px}
       .card h1{font-size:28px}
     }
+.field.invalid {
+    border-color: #ff6b81;                 /* viền đỏ hồng */
+    background: rgba(255,107,129,0.06);    /* nền nhẹ */
+    box-shadow: 0 6px 18px rgba(255,107,129,0.06) inset;
+}
+
+/* Icon lỗi (nếu muốn thêm icon trong label) */
+.field.invalid svg {
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,0.2));
+    opacity: 1;
+}
+
+/* Thông báo lỗi nhỏ dưới ô input */
+.error-text {
+    color: #ffb3c6;
+    font-size: 13px;
+    margin-top: 6px;
+    text-align: left;
+    padding-left: 6px;
+}
+
+/* Tùy chọn: disable nút khi có lỗi */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Hiệu ứng focus cho input để rõ ràng */
+.field input:focus {
+    outline: none;
+    box-shadow: 0 4px 18px rgba(98, 0, 238, 0.12);
+}
