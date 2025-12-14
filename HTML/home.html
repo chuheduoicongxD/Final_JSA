@@ -1,101 +1,66 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToothFresh - Cửa hàng kem đánh răng</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Sách</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f8fb;
-        }
-        .hero {
-            background: linear-gradient(135deg, #4fc3f7, #0288d1);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .product-card img {
-            height: 160px;
-            object-fit: contain;
-        }
-        .product-card {
-            transition: 0.3s;
-        }
-        .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        footer {
-            margin-top: 60px;
-            background: #0288d1;
-            color: white;
-            padding: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="/CSS/home.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">ToothFresh</a>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark px-3">
+    <a class="navbar-brand" href="#"><b>📚 BookStore</b></a>
+    <input id="searchInput" type="text" class="form-control w-25" placeholder="Tìm kiếm sách...">
+</nav>
+
+<!-- DANH MỤC -->
+<div class="container mt-3">
+    <h3>📂 Danh mục</h3>
+    <div class="btn-group mb-3">
+        <button class="btn btn-primary" onclick="filterCategory('all')">Tất cả</button>
+        <button class="btn btn-outline-primary" onclick="filterCategory('Novel')">Tiểu thuyết</button>
+        <button class="btn btn-outline-primary" onclick="filterCategory('Science')">Khoa học</button>
+        <button class="btn btn-outline-primary" onclick="filterCategory('History')">Lịch sử</button>
+        <button class="btn btn-outline-primary" onclick="filterCategory('Literature')">Văn học</button>
+    </div>
+
+    <div class="row" id="bookContainer"></div>
+</div>
+
+<!-- MODAL CHI TIẾT SÁCH -->
+<div class="modal fade" id="bookModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="modalTitle" class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-4">
+            <img id="modalImage" class="img-fluid rounded mb-3">
+          </div>
+
+          <div class="col-md-8">
+            <p><b>Tác giả:</b> <span id="modalAuthor"></span></p>
+            <p><b>Quốc gia:</b> <span id="modalCountry"></span></p>
+            <p><b>Thể loại:</b> <span id="modalCategory"></span></p>
+          </div>
         </div>
-    </nav>
+      </div>
 
-    <section class="hero">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Cửa hàng kem đánh răng chất lượng cao</h1>
-            <p class="lead mt-3">Sức khỏe răng miệng bắt đầu từ những lựa chọn nhỏ mỗi ngày</p>
-            <a href="#products" class="btn btn-light btn-lg mt-3 px-4">Xem sản phẩm</a>
-        </div>
-    </section>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/JS/home.js"></script>
 
-    <section id="products" class="container mt-5">
-        <h2 class="text-center mb-4 fw-bold">Sản phẩm nổi bật</h2>
-        <div class="row g-4">
-
-            <div class="col-md-4">
-                <div class="card product-card p-3">
-                    <img src="https://png.pngtree.com/png-clipart/20230921/original/pngtree-toothpaste-blue-turquoise-tube-3d-illustration-png-image_13098638.png" class="card-img-top" alt="Kem đánh răng">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">FreshMint Pro</h5>
-                        <p class="text-muted">Làm sạch sâu, thơm mát lâu</p>
-                        <p class="fw-bold text-primary">59.000đ</p>
-                        <button class="btn btn-primary w-100">Mua ngay</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card product-card p-3">
-                    <img src="https://png.pngtree.com/png-clipart/20231001/original/pngtree-toothpaste-blue-turquoise-tube-3d-illustration-png-image_13228420.png" class="card-img-top" alt="Kem đánh răng">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">WhiteCare Plus</h5>
-                        <p class="text-muted">Tẩy trắng răng tự nhiên</p>
-                        <p class="fw-bold text-primary">79.000đ</p>
-                        <button class="btn btn-primary w-100">Mua ngay</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card product-card p-3">
-                    <img src="https://png.pngtree.com/png-clipart/20231001/original/pngtree-toothpaste-blue-turquoise-tube-3d-illustration-png-image_13228383.png" class="card-img-top" alt="Kem đánh răng">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Protect Ultra</h5>
-                        <p class="text-muted">Ngừa sâu răng, bảo vệ men răng</p>
-                        <p class="fw-bold text-primary">65.000đ</p>
-                        <button class="btn btn-primary w-100">Mua ngay</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="text-center">
-        <p>© 2025 ToothFresh Shop - Tươi mát mỗi ngày</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
