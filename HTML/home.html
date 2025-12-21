@@ -1,66 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Website Sách</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS/home.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Sách</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/CSS/home.css" />
 </head>
 
 <body>
+  <!-- NAVBAR -->
+  <nav class="navbar px-3" style="background-color:#4b2e2e;">
+    <a class="navbar-brand fw-bold" href="#" style="color:#f7dc6f;">
+      📚 BookStore
+    </a>
+    <input id="searchInput" type="text" class="form-control w-25" placeholder="Tìm kiếm sách..." />
+  </nav>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-dark bg-dark px-3">
-    <a class="navbar-brand" href="#"><b>📚 BookStore</b></a>
-    <input id="searchInput" type="text" class="form-control w-25" placeholder="Tìm kiếm sách...">
-</nav>
-
-<!-- DANH MỤC -->
-<div class="container mt-3">
+  <!-- DANH MỤC -->
+  <div class="container mt-3">
     <h3>📂 Danh mục</h3>
     <div class="btn-group mb-3">
-        <button class="btn btn-primary" onclick="filterCategory('all')">Tất cả</button>
-        <button class="btn btn-outline-primary" onclick="filterCategory('Novel')">Tiểu thuyết</button>
-        <button class="btn btn-outline-primary" onclick="filterCategory('Science')">Khoa học</button>
-        <button class="btn btn-outline-primary" onclick="filterCategory('History')">Lịch sử</button>
-        <button class="btn btn-outline-primary" onclick="filterCategory('Literature')">Văn học</button>
+      <button class="btn btn-primary" onclick="filterCategory('all')">
+        Tất cả
+      </button>
+      <button class="btn btn-outline-primary" onclick="filterCategory('Novel')">
+        Tiểu thuyết
+      </button>
+      <button class="btn btn-outline-primary" onclick="filterCategory('Science')">
+        Khoa học
+      </button>
+      <button class="btn btn-outline-primary" onclick="filterCategory('History')">
+        Lịch sử
+      </button>
+      <button class="btn btn-outline-primary" onclick="filterCategory('Literature')">
+        Văn học
+      </button>
     </div>
 
     <div class="row" id="bookContainer"></div>
-</div>
+  </div>
 
-<!-- MODAL CHI TIẾT SÁCH -->
-<div class="modal fade" id="bookModal" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 id="modalTitle" class="modal-title"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+  <!-- MODAL CHI TIẾT SÁCH -->
+  <div class="modal fade" id="bookModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="modalTitle" class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
 
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-4">
-            <img id="modalImage" class="img-fluid rounded mb-3">
-          </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img id="modalImage" class="img-fluid rounded mb-3" />
+            </div>
 
-          <div class="col-md-8">
-            <p><b>Tác giả:</b> <span id="modalAuthor"></span></p>
-            <p><b>Quốc gia:</b> <span id="modalCountry"></span></p>
-            <p><b>Thể loại:</b> <span id="modalCategory"></span></p>
+            <div class="col-md-8">
+              <p><b>Tác giả:</b> <span id="modalAuthor"></span></p>
+              <p><b>Quốc gia:</b> <span id="modalCountry"></span></p>
+              <p><b>Thể loại:</b> <span id="modalCategory"></span></p>
+              <p><b>Mô tả:</b> <span id="modalDescription"></span></p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">
+            Đóng
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/JS/home.js"></script>
 
+  <!-- Footer -->
+  <footer class="bg-dark text-light mt-5">
+    <div class="container py-4">
+      <div class="row">
+        <!-- GIỚI THIỆU -->
+        <div class="col-md-4 mb-3">
+          <h5>📚 Văn Việt Thư Quán</h5>
+          <p class="small">
+            Website giới thiệu và tra cứu sách Việt Nam, góp phần lan tỏa văn
+            hóa đọc và tri thức dân tộc.
+          </p>
+        </div>
+
+        <!-- DANH MỤC -->
+        <div class="col-md-4 mb-3">
+          <h5>📖 Danh mục</h5>
+          <ul class="list-unstyled">
+            <li>Tiểu thuyết</li>
+            <li>Khoa học</li>
+            <li>Lịch sử</li>
+            <li>Văn học</li>
+          </ul>
+        </div>
+
+        <!-- Cột 3: Liên hệ -->
+        <div class="col-md-4 mb-3">
+          <h5>Liên Hệ</h5>
+          <p>Email: contact@example.com</p>
+          <p>Điện thoại: 0123 456 789</p>
+          <div>
+            <a href="#" class="text-light me-2"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light me-2"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary" />
+    </div>
+  </footer>
+
+  <!-- Js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/JS/home.js"></script>
 </body>
+
 </html>

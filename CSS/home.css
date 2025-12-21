@@ -1,11 +1,75 @@
-body { background: #f8f9fa; }
-.book-card { 
-    transition: 0.2s; 
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #f8f4ef, #f0e6d8);
 }
-.book-card:hover { 
-    transform: scale(1.03); 
-}
-.book-img {
-    height: 220px;
-    object-fit: cover;
-}
+
+ .book-card {
+     transition: 0.2s;
+ }
+
+ .book-card:hover {
+     transform: scale(1.03);
+ }
+
+ .book-img {
+     height: 220px;
+     object-fit: cover;
+ }
+
+ /* ========================= */
+ /* MÀN HÌNH TABLET */
+ /* ========================= */
+ @media (max-width: 992px) {
+
+     /* Thanh tìm kiếm */
+     #searchInput {
+         width: 50% !important;
+         margin-top: 10px;
+     }
+
+     /* Card sách */
+     .book-card {
+         margin-bottom: 20px;
+     }
+
+     /* Navbar */
+     .navbar-brand {
+         font-size: 1.4rem;
+     }
+ }
+
+ /* ========================= */
+ /* MÀN HÌNH ĐIỆN THOẠI */
+ /* ========================= */
+ @media (max-width: 576px) {
+
+     /* Navbar */
+     .navbar {
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+     .navbar-brand {
+         font-size: 1.3rem;
+         margin-bottom: 8px;
+     }
+
+     /* Ô tìm kiếm */
+     #searchInput {
+         width: 100% !important;
+     }
+
+     /* Card sách */
+     .book-img {
+         height: 180px;
+     }
+
+     /* Footer */
+     footer {
+         text-align: center;
+     }
+
+     footer .col-md-4 {
+         margin-bottom: 15px;
+     }
+ }

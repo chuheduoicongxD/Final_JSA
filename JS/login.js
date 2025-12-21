@@ -14,5 +14,5 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     }
 
     alert("Đăng nhập thành công!");
-    window.location.href = "home.html"; // Bạn có thể tạo trang này
+    window.location.href = "home.html";
 });
